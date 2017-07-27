@@ -39,7 +39,7 @@ def get_subsample(dataSet,ratio):
     lenSubdata=round(len(dataSet)*ratio)
     while len(subdataSet) < lenSubdata:
         index=randrange(len(dataSet)-1)
-        subdataSet.append(dataSet[index])
+        subdataSet.append(dataSet[index]) #随机有放回抽样
     #print len(subdataSet)
     return subdataSet
 
@@ -204,41 +204,3 @@ if __name__=='__main__':
     print ('mean score:%s'% (sum(scores)/float(len(scores))))
         
         
-        
-            
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -128,12 +128,12 @@ print np.shape(data_set)
 # print data_set[0][0]
 data_set = normalSize(data_set)
 data_new = pca.pca_branch(data_set)
-kmeans = KMeans(n_cluster).fit(data_new)
+kmeans = KMeans(n_cluster,init='k-means++').fit(data_new)
 lab = kmeans.labels_
 print lab
 lab = np.array(lab).T
 lab = np.column_stack((lab,aa[:,1:2]))
-lab = np.column_stack((lab,data_set))
+lab = np.column_stack((lab,data_new))
 lab= lab[np.lexsort(lab[:,::-1].T)] #按第一列顺序排序
 # print lab
 np.savetxt('new.csv', lab, delimiter = ',')

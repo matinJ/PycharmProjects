@@ -6,7 +6,7 @@ import numpy as np
 from sklearn.datasets import load_iris
 
 iris = load_iris()
-print iris
+# print iris
 print iris['target'].shape
 rf = RandomForestRegressor() #默认参数设置
 rf.fit(iris.data[:150],iris.target[:150]) #模型训练
@@ -23,6 +23,7 @@ print iris.target[100],iris.target[109]
 from sklearn.cross_validation import cross_val_score, ShuffleSplit
 X = iris["data"]
 Y = iris["target"]
+print Y
 names = iris["feature_names"]
 rf = RandomForestRegressor()
 scores = []
